@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="../../htmlhub.css">
+    <header>
+        <h1>Home-Server Project</h1>
+        <h2>Exploring the world of home labbing</h2>
+        <hr>
+    </header>
+    <body>
+        <div class="column side">
+            <h4>Page Destinations:</h4>
+            <ul>
+                <li><a href="../../homepage.html">Home</a></li>
+                <li><a href="../articles.html">Articles</a></li>
+                <li><a href="../changelog.html">Changelog</a></li>
+            </ul>
+        </div>
+        <div class="column middle">
+            <p> - Home labbing is a fascinating hobby that allows enthusiasts to build and manage their own servers, networks, and applications at home. It provides a hands-on way to learn about IT infrastructure, software development, and system administration. Starting today, we will cover the basics to get your server up and running!</p>
+            <br>
+            <h4>Key Aspects of Home Labbing:</h4>
+            <ol>
+                <li>Setting up your server</li>
+                <li>Network configuration & remote access</li>
+                <li>Configuring applications</li>
+            </ol>
+            <h3>1. Setting up your server</h3>
+            <p> - You may think setting up your own server will be difficult; there is some truth to that, but this guide will make home-labbing a breeze.</p>
+            <br><p> - First, we need to determine what hardware our server will run on. My personal favorite choice for this step is finding an old laptop/PC. Using recycled tech is great because it allows you to enter the field of home-labbing without making a steep initial investment. This guide assumes you have <i>some (nothing too advanced)</i> knowledge of computer science. For your first machine or a hobby project, high-end specs are not important. A powerful processor, high amounts of memory, and lots of storage are key performance variables.</p>
+            <br><p> - Secondly, we need to choose an operating system. For this guide, I will be using Ubuntu Server LTS 24 due to it's wide library support and reputation for security. This guide will work with any server OS (in theory), and be especially similar for similar Debian based systems. Another important thing to note; installing a version of the operating system without a GUI will save precious resources on the host machine, so getting used to using the terminal is can be very beneficial here. Flash the OS to a storage device and configure your host device to boot into the storage medium. Installation is straight-forward, but here are a few pointers: </p>
+            <ul>
+                <li>LVM Group - This is useful for partitioning your drive, and is enabled by default. For the purposes of this guide, it will make our job harder; disable it.</li>
+                <li>SSH - Be sure to install dependencies for SSH when prompted. This will allow us to access the server from an external device.</li>
+                <li>Device name, user name, and password - Remember to write this down! This is how we will access the PC later</li>
+            </ul>
+            <p>Now your server should be up and running. Let's add some features.</p>
+            <h3>2. Network configuration and remote access</h3>
+            <p> - Now that the server is running, we need to configure some things that will make interfacing with the device easier. The first step in this process is to assign a static IP to your host machine. This means that when we talk to the device from the same network, it always has the same location. This will require you to log into your router's access dashboard (<a href="http:/192.168.1.1">Usually found at 192.168.1.1</a>). On my router, the setting was under a tab called DHCP reservation, but this will differ from model to model.</p>
+            <br><p> - Next we need to enable remote access. Using SSH or Secure Shell protocol, we can access the server host machine via a command prompt on our main device. Open command prompt, powershell, or your favorite terminal and type in the following:  </p>
+            <code>$ ssh [Username you configured]@192.168.1.[Local IP you configured]</code>
+            <br><p> - Enter the command and login as prompted. Once complete, you have successfully gained access to your host machine and can begin adding functionality!</p>
+            
+            <h3>3. Configuring Applications</h3>
+            <p> - With your server up and running, access protocol established, and network settings configured, it is now time to create the server of your dreams. This is where you own vision for a home-server takes over. To get you started here are some common applications:</p>
+            <h4>Server Management Tools</h4>
+            <p> - These tools are commonly used to make the management and deployment of server resources more simple</p>
+            <ul>
+                <li>Docker: Create instances of programs that run in a container, here the exact environment variables can be meticulously managed and transferred between devices. If you prefer a GUI based experience, look at a web-hosted dashboard like Portainer</li>
+                <li>Git: The quintessential version control software. Learning how Git and GitHub works will prove valuable in your network admin journey.</li>
+            </ul>
+            <h4>Self-Hosted Alternatives</h4>
+                <li>NextCloud & File Browser: Open source alternative to Google Drive/Apple ICloud/Microsoft OneDrive/Dropbox</li>
+                <li>JellyFin & Plex: Open source alternatives to media hosting platforms like Netflix and Hulu</li>
+                <li>Pi-Hole: DNS sinkhole and VPN software</li>
+                <li>Ollama: Run customizable, open source, and portable LLM models. Offline and private.</li>
+            </ul>
+        </div>
+
+    </body>
+
+</html>>
