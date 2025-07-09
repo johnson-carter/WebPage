@@ -1,74 +1,202 @@
 <!DOCTYPE html>
-<html>
-    <link rel="stylesheet" href="htmlhub.css">
-    <head>
-        <title>Home Page</title>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refresh Media - A Better Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
 
-    <header>
-        <h1>Refresh Media by Carter Johnson</h1>
-        <h2>Crafting the future,<i> today</i></h2>
-        <hr>
-    </header>
+        body {
+            background-color: #f8f9fa;
+            color: #2d3436;
+        }
 
-    <body>
-        <div class ="column side">   
-            <h4>Page Destinations:</h4>
-            <ul>
-                <li><a href="homepage.html">Home</a></li>    
-                <li><a href="contentPages/articles.html">Articles</a></li>
-                <li><a href="contentPages/changelog.html">Changelog</a></li>
-            </ul>
-            <h4>Featured Content:</h4>
-            <ul>
-                <li><a href="contentPages/projectPages/station.html">Station - Clean. Powerful. Secure.</a></li>
-                <li><a href="contentPages/projectPages/paintsticker.html">PaintSticker</a></li>
-                <li><a href="contentPages/articlePages/homelab.html">Home Labbing: A Quickstart Guide</a></li>       
-            </ul>
-            <h4>Personal Digest:</h4>
-            <ul>
-                <li><a href="contentPages/cv.html">Resume / CV    </a></li>
-                <li><a href="https://github.com/johnson-carter">GitHub Page</a></li>
-                <li><a href="https://auburn.edu">Auburn</a></li>
-            </ul>
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3436;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: #2d3436;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #007bff;
+        }
+
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+            background: linear-gradient(45deg, #6366f1, #2563eb);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: white;
+            color: #6366f1;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects-grid, .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card, .article-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover, .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #6366f1;
+        }
+
+        footer {
+            background-color: #2d3436;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">Refresh Media</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#articles">Articles</a>
+                <a href="contentPages/changelog.html">Changelog</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
-        <div class="column middle">
-            <h3>Welcome to my Refresh!</h3>
-            <p>This is my new project to showcase my development skills and personal projects. Feel free to explore from the links on the left to learn more about my work, interests, and skills.</p>
-            <p>For any inquiries or feedback, please reach out via the contact information provided in the footer.</p>
-            <hr>
-            <p>Thank you for visiting!</p>
-            <br>
-            <h3>Changes + Up Next:</h3>
-            <p>Several features for the site have been shipped lately, here a quick summary to stay caught up:</p>
-            <ul>
-                <li>- Added navigation bars to main pages</li>
-                <li>Populated content pages</li>
-                <li>Enhanced responsive design</li>
-                <li>Created UI elements</li>
-                <li>Added a changelog</li>
-            </ul>
-            <p>Moving forward, several changes are expected. Keep your eyes peeled for updates here and on my other platforms! The full changelog can be viewed <a href="contentPages/changelog.html">here</a></p>
-            <br>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Building the Future, Today</h1>
+            <p>We help entrepenuers and creators bring their ideas to life through modern coding solutions.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
         </div>
-        <hr>
-    </body>
+    </section>
+
+    <section class="section" id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3 class="card-title">PaintSticker</h3>
+                <p>PaintSticker is a lightweight, open-source paint application for fast sketching, image editing, and creative projects. It supports freehand drawing, text, lines, transparency, and custom canvases — all in a compact Java package with zero tracking, easy setup, and full offline support.</p>
+            </div>
+            <div class="project-card">
+                <h3 class="card-title">Station</h3>
+                <p>Open-source desktop productivity application. Prioritizes user privacy, experience, and efficiency. Manage tasks, notes, and events with a lightweight dashboard.</p>
+            </div>
+            <div class="project-card">
+                <h3 class="card-title">Daily Refresh</h3>
+                <p>We have created a newsletter that delivers honest reviews, plain-English explanations, and practical tutorials for IT professionals and power users looking to stay on top the ever-changing digital ecosystem. We test the tools, decode the trends, and share the workflows that actually work - no fluff, no hype, just useful tech insights.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="articles">
+        <h2>Latest Articles</h2>
+        <div class="articles-grid">
+            <article class="article-card">
+                <h3 class="card-title">Build a Private Cloud</h3>
+                <p>Learn the fundamentals of Homelabbing and start building your own private cloud-based applications today.</p>
+            </article>
+            <article class="article-card">
+                <h3 class="card-title">AI Code Tools Review</h3>
+                <p>I used various AI coding tools for over 6 months. Learn which products are hype and which ones can help your workflow.</p>
+            </article>
+            <article class="article-card">
+                <h3 class="card-title">Welcome to Refresh!</h3>
+                <p>Coming Soon</p>
+            </article>
+        </div>
+    </section>
 
     <footer>
-
-        <div class = "column split">
-            <p>Thank you for visiting!</p>
-            <p><a href="contentPages/changelog.html">Changelog</a></p>
-        </div>
-        <div class = "column split">
-            <p>© Carter Johnson - 2025</p>
-        </div>
-        <div class = "column split">
-            <p><a href="mailto:carter.johnson44@outlook.com">Question, Concern, or Comment?</a>
-            </p>
-        </div>
-
-        
+        <p>&copy; 2025 Refresh Media by Carter Johnson. All rights reserved.</p>
     </footer>
-
+</body>
 </html>
